@@ -1,4 +1,4 @@
-'use strict';
+
 
 const oneModule = () => {
   const firstModule = 'My first module';
@@ -6,4 +6,4 @@ const oneModule = () => {
   console.log(firstModule);
 };
 
-module.exports = oneModule;
+export default oneModule;
