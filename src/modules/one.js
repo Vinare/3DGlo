@@ -1,5 +1,3 @@
-
-
 const oneModule = () => {
   const firstModule = 'My first module';
 
