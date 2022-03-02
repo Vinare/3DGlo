@@ -1,7 +1,10 @@
 const oneModule = () => {
-  const firstModule = 'My first module';
+  const timerHours = document.getElementById('timer-hours')
+  const timerHours = document.getElementById('timer-hours')
+  const timerHours = document.getElementById('timer-hours')
+  // timer-minutes
+  // timer-seconds
+}
 
-  console.log(firstModule);
-};
-
-export default oneModule;
+oneModule()
+// export default oneModule;

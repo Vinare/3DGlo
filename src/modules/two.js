@@ -4,4 +4,5 @@ const twoModule = () => {
   console.log(secondModule);
 };
 
-export default twoModule;
+twoModule();
+// export default twoModule;
