@@ -3,8 +3,8 @@ const timer = (deadline) => {
   const timerHours = document.getElementById('timer-hours')
   const timerMinutes = document.getElementById('timer-minutes')
   const timerSeconds = document.getElementById('timer-seconds')
-  
-  
+  let timerID
+
   const getTimeRemaining = () => {
     let dateStop = new Date(deadline).getTime()
     let dateNow = new Date().getTime()
@@ -33,12 +33,14 @@ const timer = (deadline) => {
 
     if (getTime.timeRemaining > 0) {
 
-      setInterval(updateClock, 1000)
+      timerID = setInterval(updateClock, 1000)
     } else {
       timerHours.textContent = '00',
       timerMinutes.textContent = '00',
       timerSeconds.textContent = '00',
       timerDays.textContent = '00'
+
+      clearInterval(timerID)
     }
   }
   intervalCall()
