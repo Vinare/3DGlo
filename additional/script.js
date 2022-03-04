@@ -4,7 +4,7 @@ let hours = date.getHours()
 let minutes = date.getMinutes()
 let seconds = date.getSeconds()
 let message = ''
-let nowDate = `${hours}:${minutes}:${seconds}`
+let nowDate
 let dateStop = new Date('1 january 2023').getTime()
 let dateNow = new Date().getTime()
 let timeRemaining = (dateStop - dateNow) / 1000
@@ -35,6 +35,8 @@ hours = (hours < 10) ? '0' + hours : hours
 minutes = (minutes < 10) ? '0' + minutes : minutes
 seconds = (seconds < 10) ? '0' + seconds : seconds
 
+nowDate = `${hours}:${minutes}:${seconds}`
+
 function declOfNum(n, textForms) {   
   n = Math.abs(n) % 100; 
   var n1 = n % 10;
@@ -46,9 +48,5 @@ function declOfNum(n, textForms) {
 
 // выведем приветствие, день недели и время в консоль
 
-console.log(message)
-console.log(`Сегодня: ${dayOfWeek}`)
-console.log(`Текущее время: ${nowDate} ${amPm}`)
-console.log(`До нового года осталось ${newYear} ${declOfNum(newYear, ['день', 'дня', 'дней'])}`);
-
+document.write(`<p>${message}</p><p>Сегодня: ${dayOfWeek}</p><p>Текущее время: ${nowDate} ${amPm}</p><p>До нового года осталось ${newYear} ${declOfNum(newYear, ['день', 'дня', 'дней'])}</p>`)
 
