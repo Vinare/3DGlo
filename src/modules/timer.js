@@ -44,5 +44,4 @@ const timer = (deadline) => {
   intervalCall()
 }
 
-timer('8 march 2022')
-// export default oneModule;
+export default timer

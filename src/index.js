@@ -1,6 +1,6 @@
 import timer from './modules/timer';
 
-timer();
+timer('8 march 2022')
 
 
 
