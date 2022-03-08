@@ -1,4 +1,6 @@
-import {animate} from './animate'
+import {
+  animate
+} from './animate'
 
 const modal = () => {
   const modal = document.querySelector('.popup')
@@ -33,10 +35,4 @@ const modal = () => {
   })
 }
 
-
 export default modal
-
-// const array1 = [1, 2, 3, 4]
-// const array2 = 3
-
-// const allItems = [...array1, array2]
