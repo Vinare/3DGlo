@@ -1,8 +1,4 @@
-export const animate = ({
-  timing,
-  draw,
-  duration
-}) => {
+export const animate = ({ timing, draw, duration}) => {
 
   let start = performance.now();
 

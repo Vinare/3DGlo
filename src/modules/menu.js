@@ -15,5 +15,4 @@ const menu = () => {
 
 };
 
-menu()
-// export default menu;
+export default menu;

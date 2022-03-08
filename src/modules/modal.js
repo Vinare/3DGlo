@@ -1,26 +1,4 @@
-const animate = ({
-  timing,
-  draw,
-  duration
-}) => {
-
-  let start = performance.now();
-
-  requestAnimationFrame(function animate(time) {
-    // timeFraction изменяется от 0 до 1
-    let timeFraction = (time - start) / duration;
-    if (timeFraction > 1) timeFraction = 1;
-
-    // вычисление текущего состояния анимации
-    let progress = timing(timeFraction);
-
-    draw(progress); // отрисовать её
-
-    if (timeFraction < 1) {
-      requestAnimationFrame(animate);
-    }
-  });
-}
+import {animate} from './animate'
 
 const modal = () => {
   const modal = document.querySelector('.popup')
@@ -55,10 +33,10 @@ const modal = () => {
   })
 }
 
-modal()
-// export default modal
 
-const array1 = [1, 2, 3, 4]
-const array2 = 3
+export default modal
 
-const allItems = [...array1, array2]
+// const array1 = [1, 2, 3, 4]
+// const array2 = 3
+
+// const allItems = [...array1, array2]
