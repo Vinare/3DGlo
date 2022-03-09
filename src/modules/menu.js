@@ -3,10 +3,8 @@ const menu = () => {
   const menu = document.querySelector('menu')
   const closeBtn = menu.querySelector('.close-btn')
   const menuItems = menu.querySelectorAll('ul>li>a')
-  const smoothScroll = document.querySelector('a[href="#service-block"]')
+  const smoothScroll = document.querySelector('.service-link')
   const menuItemsAll = [...menuItems, smoothScroll]
-  console.log(menuItemsAll);
-
 
   const handleMenu = () => {
     menu.classList.toggle('active-menu')
