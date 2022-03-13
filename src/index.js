@@ -10,7 +10,7 @@ import slider from './modules/slider'
 timer('26 march 2022')
 menu()
 modal()
-calc()
+calc(100)
 validations()
 smoothScroll()
 tabs()
