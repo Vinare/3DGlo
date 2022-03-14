@@ -6,7 +6,7 @@ const validations = () => {
 
   const regExpText = /[^а-я\-\s]+/i
   const regExpEmail = /[^a-z\@\-\_\.\!\~\*\']+/i
-  const regExpPhone = /[^0-9\(\)\-]+/i
+  const regExpPhone = /[^\d()\s-+]/g
 
   const manyDash = /(\-+)/g
   const manySpace = /(\s+)/g
@@ -44,10 +44,10 @@ const validations = () => {
         .replace(manySpace, " ")
         .replace(edgeDash, "")
         .replace(edgeSpace, "")
-      
+
       e.target.value = e.target.value.toLowerCase()
       e.target.value = e.target.value
-      .replace(/^[а-я]{1}|\s{1}[а-я]{1}/gi, capitalizeLetterFunc)
+        .replace(/^[а-я]{1}|\s{1}[а-я]{1}/gi, capitalizeLetterFunc)
     })
   })
 

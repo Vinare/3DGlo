@@ -88,7 +88,6 @@ const slider = () => {
   });
 
   sliderBlock.addEventListener("mouseenter", (e) => {
-    console.log(e.target);
     if (e.target.matches(".dot, .portfolio-btn")) {
       stopSlide();
     }
