@@ -55,22 +55,6 @@ const sendForm = ({
     const formData = new FormData(form)
     const formBody = {}
 
-    statusBlock.textContent = loadText
-    form.append(statusBlock)
-
-    formData.forEach((val, key) => {
-      formBody[key] = val
-    })
-
-    someElem.forEach(elem => {
-      const element = document.getElementById(elem.id)
-      if (elem.type === 'block') {
-        formBody[elem.id] = element.textContent
-      } else if (elem.type === 'input') {
-        formBody[elem.id] = element.value
-      }
-    })
-
     if (validate(formElements)) {
       sendData(formBody)
         .then(data => {
@@ -91,9 +75,24 @@ const sendForm = ({
 
         })
     } else {
-      alert('Данные не валидны!!!')
+      return alert('Данные не валидны!!!')
     }
 
+    statusBlock.textContent = loadText
+    form.append(statusBlock)
+
+    formData.forEach((val, key) => {
+      formBody[key] = val
+    })
+
+    someElem.forEach(elem => {
+      const element = document.getElementById(elem.id)
+      if (elem.type === 'block') {
+        formBody[elem.id] = element.textContent
+      } else if (elem.type === 'input') {
+        formBody[elem.id] = element.value
+      }
+    })
   }
 
   try {
