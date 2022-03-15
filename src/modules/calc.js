@@ -34,7 +34,8 @@ const calc = (price = 100) => {
       totalValue = 0;
     }
 
-    total.textContent = totalValue;
+    // округляем total
+    total.textContent = Math.floor(totalValue);
   };
 
   inputNumber.forEach((input) => {

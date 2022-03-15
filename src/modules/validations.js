@@ -20,6 +20,8 @@ const validations = () => {
   })
 
   inputEmail.forEach((input) => {
+    input.required = true
+
     input.addEventListener("input", (e) => {
       e.target.value = e.target.value.replace(regExpEmail, "")
     })

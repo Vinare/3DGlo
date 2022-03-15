@@ -3,6 +3,8 @@ const sendForm = ({
   someElem = []
 }) => {
   const form = document.getElementById(formID);
+  const allInputs = document.querySelectorAll('input')
+  const allSelects = document.querySelectorAll('select')
   const statusBlock = document.createElement('div')
   const loadText = 'Загрузка...'
   const errorText = 'Ошибка...'
@@ -33,6 +35,16 @@ const sendForm = ({
       formBody[key] = val
     })
 
+    someElem.forEach(elem => {
+      const element = document.getElementById(elem.id)
+
+      if (elem.type === 'block') {
+        formBody[elem.id] = element.textContent
+      } else if (elem.type === 'input') {
+        formBody[elem.id] = element.value
+      }
+    })
+
     if (validate(formElements)) {
       sendData(formBody)
         .then(data => {
@@ -41,6 +53,10 @@ const sendForm = ({
           formElements.forEach(input => {
             input.value = ''
           });
+
+          // чистим все inputs и selects после отправки форм
+          [...allInputs, ...allSelects].forEach(input => input.value = '')
+
           setTimeout(() => {
             form.removeChild(statusBlock);
           }, 5000);
@@ -58,16 +74,6 @@ const sendForm = ({
 
     statusBlock.textContent = loadText
     form.append(statusBlock)
-
-    someElem.forEach(elem => {
-      const element = document.getElementById(elem.id)
-
-      if (elem.type === 'block') {
-        formBody[elem.id] = element.textContent
-      } else if (elem.type === 'input') {
-        formBody[elem.id] = element.value
-      }
-    })
   }
 
   statusBlock.style.color = '#19b5fe'
