@@ -57,6 +57,15 @@ const sendForm = ({
           // чистим все inputs и selects после отправки форм
           [...allInputs, ...allSelects].forEach(input => input.value = '')
 
+          someElem.forEach(elem => {
+            const element = document.getElementById(elem.id)
+            if (elem.type === 'block') {
+              element.textContent = '0'
+            } else if (elem.type === 'input') {
+              element.value = ''
+            }
+          })
+
           setTimeout(() => {
             form.removeChild(statusBlock);
           }, 5000);
